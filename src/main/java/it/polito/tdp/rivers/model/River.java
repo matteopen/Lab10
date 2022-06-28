@@ -3,7 +3,7 @@ package it.polito.tdp.rivers.model;
 import java.util.ArrayList;
 import java.util.List;
 
-public class River {
+public class River implements Comparable<River>{
 	private int id;
 	private String name;
 	private double flowAvg;
@@ -77,5 +77,11 @@ public class River {
 		if (id != other.id)
 			return false;
 		return true;
+	}
+
+	@Override
+	public int compareTo(River o) {
+		
+		return this.getName().compareTo(o.getName());
 	}
 }
